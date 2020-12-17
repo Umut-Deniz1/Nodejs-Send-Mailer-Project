@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Form Page</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div class="form-div">
+        <form action="/sendEmailForm" method="POST">
+            <div class="input-fields">
+                ID <input id="id" class="input" name="id" type="text" placeholder="ID"> <br><br>
+                Name <input id="name" class="input" name="name" type="text" placeholder="Name"> <br><br>
+                Surname <input id="surname" class="input" name="surname" type="text" placeholder="Surname"> <br><br>
+                E-Mail <input id="email" class="input" name="email" type="text" placeholder="abcd@gmail.com"> <br><br>
+                <br><br>
+                <button id="insert" class="btn">Send</button>
+            </div>
+            
+        </form>
+    </div>
+
+
+
+
+
+    <script src="./app.js"></script>
+    <script src="./firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.0/firebase-app.js%22%3E"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.0/firebase-auth.js%22%3E"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.0/firebase-database.js%22%3E"></script>
+
+
+</body>
+
+</html>
