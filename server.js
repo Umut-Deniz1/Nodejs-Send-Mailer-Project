@@ -10,13 +10,13 @@ var transporter = nodemailer.createTransport({
     port: 8080,
     service: 'gmail',
     auth: {
-        user: 'sendmailer005@gmail.com',
-        pass: 'Mailgonder'
+        user: 'senmailer01@gmail.com',
+        pass: 'umut1umut'
     }
 })
 function sendEmail(mail) {
     var mailOptions = {
-        from: 'sendmailer005@gmail.com',
+        from: 'senmailer01@gmail.com',
         to: mail.to,
         subject: mail.subject,
         html: mail.body,
@@ -39,8 +39,13 @@ app.post('/sendEmailForm', (req, res) => {
     }
     sendEmail(mail)
     res.redirect('/')
+    
 })
 
 app.listen(8101, () => {
     console.log('Server is running.')
 })
+
+
+
+

@@ -8,26 +8,24 @@
 
 <body>
     <div class="form-div">
-        <form action="/sendEmailForm" method="POST"  class="form" >
+        <form action="/sendEmailForm" method="POST" class="form">
             <div class="input-fields">
-                <input id="id" class="input" name="id" type="text" placeholder="ID"> <br><br>
-                <input id="name" class="input" name="name" type="text" placeholder="Name"> <br><br>
-                <input id="surname" class="input" name="surname" type="text" placeholder="Surname"> <br><br>
-                <input id="email" class="input" name="email" type="text" placeholder="abcd@gmail.com"> 
-                <br>
-                <button type="button" class="btn" onclick = 'insert()'>Save Database</button>
-                <br>
-                <button type="submit" onclick="smail()" class="btn">Send Mail</button>
+                ID <input id="id" class="input" name="id" type="text" placeholder="ID"> <br><br>
+                Name <input id="name" class="input" name="name" type="text" placeholder="Name"> <br><br>
+                Surname <input id="surname" class="input" name="surname" type="text" placeholder="Surname"> <br><br>
+                E-Mail <input id="email" class="input" name="email" type="text" placeholder="abcd@gmail.com"> <br><br>
+                <br><br>
+                <button id="insert">Send</button>                    
             </div>
 
         </form>
     </div>
-
     <script src="https://www.gstatic.com/firebasejs/8.2.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.0/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.0/firebase-database.js"></script>
 
     <script id="MainScript">
+
         const firebaseConfig = {
             apiKey: "AIzaSyDiFsgtruf4T4X5_I9_cCtZL0YPQv25HzE",
             authDomain: "fir-js-67a43.firebaseapp.com",
@@ -48,7 +46,7 @@
             emailV = document.getElementById('email').value;
         }
 
-        function insert() {
+        document.getElementById('insert').onclick = function (){
             Ready();
             firebase.database().ref('user/' + idV).set({
                 NameOfUser: nameV,
@@ -56,14 +54,16 @@
                 Surname: surnameV,
                 Email: emailV
             });
-            alert('User saving in database!!');
-        }
-        function smail(){
-            alert('Sent verify email.')
-        }
 
+        }
     </script>
 
 </body>
 
 </html>
+
+
+
+
+
+
